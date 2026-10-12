@@ -13,6 +13,7 @@ on:
       - "**.liquid"
       - "**/*.md"
       - "**.yml"
+      - "_config.yml"
       - "Gemfile"
       - "Gemfile.lock"
       - "!.github/workflows/axe.yml"
