@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的名字 - 个人学术主页</title>
-    <meta name="description" content="个人学术主页，研究方向：工厂点云语义分割、SLAM、工业场景三维感知">
+    <title>Jun Cheng - Academic Homepage</title>
+    <meta name="description" content="Academic homepage focusing on autonomous driving, robot collaborative perception, visual SLAM, and deep learning.">
     <style>
         :root {
             --bg: #ffffff;
@@ -189,8 +189,8 @@
         </div>
         <div class="header-actions">
             <div class="lang-switch">
-                <button type="button" class="lang-btn active" data-lang="zh">中文</button>
-                <button type="button" class="lang-btn" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="zh">中文</button>
+                <button type="button" class="lang-btn active" data-lang="en">EN</button>
             </div>
             <button class="theme-btn" id="toggleTheme" data-i18n="themeToggle">切换深色/浅色</button>
         </div>
@@ -442,14 +442,12 @@
             }
         }
 
-        const savedLang = localStorage.getItem('lang') || 'zh';
         loadTheme();
-        applyLanguage(savedLang);
+        applyLanguage('en');
 
         langButtons.forEach((btn) => {
             btn.addEventListener('click', () => {
                 const lang = btn.dataset.lang;
-                localStorage.setItem('lang', lang);
                 applyLanguage(lang);
             });
         });
