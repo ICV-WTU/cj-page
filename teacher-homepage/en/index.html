@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jun Cheng | Academic Homepage</title>
+  <script src="../static/js/theme-init.js?v=20261023-theme-panel"></script>
+  <link rel="stylesheet" href="../static/css/style.css?v=20261026-body-colors">
+  <link rel="alternate" hreflang="zh-CN" href="../index.html">
+  <link rel="alternate" hreflang="en" href="index.html">
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+  <header class="topbar">
+    <nav aria-label="Main navigation">
+      <a href="#news">News</a><a href="#publications">Publications</a><a href="#projects">Projects</a><a href="#patents">Patents</a><a href="#awards">Awards</a><a href="#hobbies">Hobbies</a>
+    </nav>
+    <div class="header-actions">
+    <a id="language-toggle" href="../index.html" lang="zh-CN" hreflang="zh-CN" aria-label="切换至中文" title="切换至中文">中文</a>
+    <div id="theme-picker" class="theme-picker">
+      <button id="theme-button" class="theme-button" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-panel" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.5-3.3 1.8 1.8 0 0 1 1.3-3h1.7A3.5 3.5 0 0 0 21 11.2 9 9 0 0 0 12 3Z"/><circle cx="7.5" cy="10" r=".7"/><circle cx="11" cy="6.8" r=".7"/><circle cx="15.5" cy="8" r=".7"/></svg>
+        <span>Theme</span>
+      </button>
+      <div id="theme-panel" class="theme-panel" role="dialog" aria-labelledby="theme-panel-heading" hidden>
+        <div class="theme-panel-heading">
+          <h2 id="theme-panel-heading">Choose a theme</h2>
+          <button id="theme-close" type="button" class="theme-close" aria-label="Close theme panel">×</button>
+        </div>
+        <fieldset class="theme-options">
+          <legend class="sr-only">Page theme</legend>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="system" data-theme-option checked>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="system" aria-hidden="true"></span><span>System</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="light" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="light" aria-hidden="true"></span><span>Light</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="dark" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="dark" aria-hidden="true"></span><span>Dark</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="blue" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="blue" aria-hidden="true"></span><span>Blue</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="teal" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="teal" aria-hidden="true"></span><span>Teal</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="green" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="green" aria-hidden="true"></span><span>Green</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="purple" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="purple" aria-hidden="true"></span><span>Purple</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="orange" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="orange" aria-hidden="true"></span><span>Orange</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="custom" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="custom" aria-hidden="true"></span><span>Custom</span></span>
+          </label>
+        </fieldset>
+        <div id="theme-custom-controls" class="theme-custom-controls" hidden>
+          <p>Choose colors for the entire page, including the navigation.</p>
+          <label class="custom-color-row" for="theme-color-background">
+            <span>Background</span>
+            <span class="custom-color-value"><input id="theme-color-background" type="color" data-custom-color="background" value="#e6effa"><output id="theme-color-background-value" for="theme-color-background">#E6EFFA</output></span>
+          </label>
+          <label class="custom-color-row" for="theme-color-text">
+            <span>Text</span>
+            <span class="custom-color-value"><input id="theme-color-text" type="color" data-custom-color="text" value="#3f454f"><output id="theme-color-text-value" for="theme-color-text">#3F454F</output></span>
+          </label>
+          <label class="custom-color-row" for="theme-color-link">
+            <span>Links</span>
+            <span class="custom-color-value"><input id="theme-color-link" type="color" data-custom-color="link" value="#205fa5"><output id="theme-color-link-value" for="theme-color-link">#205FA5</output></span>
+          </label>
+        </div>
+        <div class="theme-panel-footer">
+          <button id="theme-reset" type="button" hidden>Reset colors</button>
+          <button id="theme-done" type="button">Done</button>
+        </div>
+      </div>
+    </div>
+    <span id="theme-status" class="sr-only" aria-live="polite"></span>
+    </div>
+  </header>
+  <main id="top" class="layout">
+    <div class="intro">
+    <!-- 个人资料：直接修改下方姓名、职称、照片、单位和链接。 -->
+    <aside class="profile" aria-label="Personal information">
+      <div id="portrait" class="portrait"><img src="../static/images/cheng-jun.png" alt="Jun Cheng"></div>
+      <h1 id="profile-name">Jun Cheng</h1>
+      <p id="profile-english-name" class="english-name">Jun Cheng</p>
+      <p id="profile-title" class="muted">Lecturer · Master’s Supervisor</p>
+      <p class="location">Wuhan, China</p>
+      <div class="social-links">
+        <a id="profile-email" class="icon-link" href="mailto:jcheng@wtu.edu.cn" aria-label="Email Jun Cheng" title="jcheng@wtu.edu.cn"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a>
+        <a id="profile-github" class="icon-link" href="https://github.com/ICV-WTU" target="_blank" rel="noopener noreferrer" aria-label="Visit ICV-WTU on GitHub" title="GitHub · ICV-WTU">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8A11.2 11.2 0 0 0 8.46 22.6c.56.1.77-.24.77-.54v-2.09c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.62 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.63 5.25-5.14 5.53.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+        </a>
+      </div>
+    </aside>
+      <section id="about">
+        <h2>About Me</h2>
+        <div id="biography">
+          <p>I am a lecturer and master’s supervisor in the <a href="https://csai.wtu.edu.cn/">School of Computer Science and Artificial Intelligence</a> at <a href="https://www.wtu.edu.cn/">Wuhan Textile University</a>. I also conduct postdoctoral research at the <a href="https://its.whut.edu.cn/">Intelligent Transportation Systems Research Center</a> of <a href="https://www.whut.edu.cn/">Wuhan University of Technology</a>. I received my Ph.D. in Transportation Information Engineering and Control from Wuhan University of Technology in October 2022 and joined Wuhan Textile University in November of the same year. My research focuses on perception and localization for autonomous driving and robotics, including multisensor fusion, visual SLAM, and machine learning. I lead research projects supported by the <a href="https://www.nsfc.gov.cn/">National Natural Science Foundation of China</a> and other funding programs. I also review for academic journals and mentor students in competitions.</p>
+        </div>
+        <h3 class="subheading">Research Interests</h3>
+        <p id="interests">Autonomous Driving; Collaborative Robot Perception; Visual SLAM; Deep / Machine Learning</p>
+      </section>
+    </div>
+    <div class="content">
+      <section id="news">
+        <h2 id="news-heading">News</h2>
+        <div id="news-scroll" class="news-scroll" role="region" aria-labelledby="news-heading" tabindex="0">
+          <ul id="news-list" class="dated-list">
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">🔥 SDCBNet has been published in Neural Networks. Congratulations to Liuxin Yu!</span>
+            </li>
+            <!-- Sample updates for testing scrolling; replace or remove as needed. -->
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 01] Group meeting preview: discuss recent visual SLAM research and share notes from this week's reading.</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 02] Research discussion: experimental workflows and result analysis for multisensor fusion localization.</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 03] Paper discussion: explore collaborative perception for robots and share reading notes.</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 04] Project notes: document data collection and visualization workflows for autonomous driving scenarios.</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 05] Competition discussion: share smart car debugging experience and ways to troubleshoot common issues.</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 06] Homepage update: add research introductions, publication links, and recent news.</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 07] Reading topic: study visual-inertial localization and map building.</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="News update date">2026.10.26</time></span>
+              <span class="news-text">[Sample 08] Upcoming discussion: review progress and plan the next stage of experiments.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="publications">
+        <h2>Selected Publications</h2>
+        <div id="publication-list">
+        <!-- 论文 1：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication">
+          <div class="publication-media publication-media-gif">
+            <img src="../static/images/paper-1-preview.gif" width="320" height="320" alt="Animated demonstration for publication 1">
+          </div>
+          <div class="publication-body">
+            <h3>High Precision and Robust Vehicle Localization Algorithm with Visual-LiDAR-IMU Fusion</h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Fu Zhumu, Du Luyao</p>
+            <p class="venue">IEEE Transactions on Vehicular Technology, 2024, 73(8): 11029–11043.</p>
+            <div class="publication-links">
+              <a href="https://trid.trb.org/View/2425132" target="_blank" rel="noopener noreferrer" title="View abstract, authors, and journal details; full text is not provided">Paper</a>
+            </div>
+          </div>
+        </article>
+        <!-- 论文 2：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication">
+          <div class="publication-media publication-media-gif">
+            <img src="../static/images/paper-2-preview.gif" width="320" height="320" alt="Animated demonstration for publication 2">
+          </div>
+          <div class="publication-body">
+            <h3>Map aided visual-inertial fusion localization method for autonomous driving vehicles</h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Hu Xinrong, Cai Jingcao</p>
+            <p class="venue">Measurement, 2023, 221: 113432.</p>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1016/j.measurement.2023.113432">Paper</a>
+            </div>
+          </div>
+        </article>
+        <!-- 论文 3：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication">
+          <div class="publication-media publication-media-gif">
+            <img src="../static/images/paper-3-preview.gif" width="320" height="320" alt="Animated demonstration for publication 3">
+          </div>
+          <div class="publication-body">
+            <h3>A Review of Visual SLAM Methods for Autonomous Driving Vehicles</h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Hu Xinrong</p>
+            <p class="venue">Engineering Applications of Artificial Intelligence, 2022, 114: 104992.</p>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1016/j.engappai.2022.104992">Paper</a>
+            </div>
+          </div>
+        </article>
+        <!-- 论文 4：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication">
+          <div class="publication-media publication-media-gif">
+            <img src="../static/images/paper-4-preview.gif" width="320" height="320" alt="Animated demonstration for publication 4">
+          </div>
+          <div class="publication-body">
+            <h3>Position Detection for Electric Vehicle DWCS Using VI-SLAM Method</h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Long Rong</p>
+            <p class="venue">Energy Reports, 2021, 7(6): 1–9.</p>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1016/j.egyr.2021.09.086">Paper</a>
+            </div>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>Research Projects</h2>
+        <ul id="projects-list" class="dated-list">
+          <li>
+            <span class="date">2027–2029</span>
+            <span class="news-text"><a href="https://www.nsfc.gov.cn/">National Natural Science Foundation of China</a> — Young Scientists Fund (Category C), No. 52602746; Principal Investigator; January 2027–December 2029 (not yet started).</span>
+          </li>
+          <li>
+            <span class="date">2026–2027</span>
+            <span class="news-text"><a href="https://kjt.hubei.gov.cn/">Hubei Provincial Natural Science Foundation</a> — Young Scientists Fund (Category B), No. 2026AFB241; Principal Investigator.</span>
+          </li>
+          <li>
+            <span class="date">2024–2025</span>
+            <span class="news-text"><a href="https://www.chinapostdoctor.org.cn/">China Postdoctoral Science Foundation</a> — General Program, No. 2023M740018; Principal Investigator.</span>
+          </li>
+          <li>
+            <span class="date">2023–2025</span>
+            <span class="news-text"><a href="https://jyt.hubei.gov.cn/">Department of Education of Hubei Province</a> — Outstanding Young and Middle-aged Talent Program, No. Q20231712; Principal Investigator; June 2023–June 2025.</span>
+          </li>
+          <li>
+            <span class="date">2026–2027</span>
+            <span class="news-text">Xianning Science and Technology Bureau project, No. 2025GXYF118; industry collaboration.</span>
+          </li>
+          <li>
+            <span class="date">2024–2025</span>
+            <span class="news-text"><a href="https://zdsss.ygu.edu.cn/">Fujian Provincial Key Laboratory of Spatial Information Perception and Intelligent Processing</a> — Open Research Fund, No. FKLSIPIP1028; Principal Investigator.</span>
+          </li>
+          <li>
+            <span class="date">2023–2024</span>
+            <span class="news-text"><a href="https://cee.ahpu.edu.cn/2023/0316/c8308a189057/page.htm">Open Research Fund of the Anhui Provincial Key Laboratory of Detection Technology and Energy Saving Devices</a>, No. JCKJ2022B04; Principal Investigator.</span>
+          </li>
+          <li>
+            <span class="date">2024–2026</span>
+            <span class="news-text"><a href="https://www.wtu.edu.cn/">Wuhan Textile University </a> — University Research Fund; Principal Investigator; September 2024–September 2026.</span>
+          </li>
+          <li>
+            <span class="date">2026</span>
+            <span class="news-text"><a href="https://www.wtu.edu.cn/">Wuhan Textile University </a> — Curriculum Development Project Integrating Disciplinary Education and Innovation and Entrepreneurship; Principal Investigator.</span>
+          </li>
+        </ul>
+      </section>
+      <section id="patents">
+        <h2>Patents &amp; Software</h2>
+        <ul id="patents-list" class="dated-list">
+          <li>
+            <span class="date">2025.03</span>
+            <span class="news-text"><a href="https://patents.google.com/patent/CN120121043A/en">An IMU-centric multisensor fusion localization method for autonomous driving</a> · CN120121043A · Invention patent.</span>
+          </li>
+          <li>
+            <span class="date">2025.03</span>
+            <span class="news-text"><a href="https://patents.google.com/patent/CN120147425A/en">Camera–LiDAR extrinsic calibration method and apparatus based on line and plane feature association</a> · CN120147425A · Invention patent.</span>
+          </li>
+          <li>
+            <span class="date">2025.11</span>
+            <span class="news-text"><a href="https://eureka.patsnap.com/patent/CN120943423A">An ecological wastewater purification system for water environment management</a> · CN120943423A · Invention patent.</span>
+          </li>
+          <li>
+            <span class="date">2026.04</span>
+            <span class="news-text"><a href="https://eureka.patsnap.com/patent/CN121778901A">A wastewater reuse device with coordinated multistage water environment treatment</a> · CN121778901A · Invention patent.</span>
+          </li>
+          <li>
+            <span class="date">2026.07</span>
+            <span class="news-text"><a href="https://patents.google.com/?q=CN122403545A">MVR energy-saving evaporation equipment for industrial high-salinity wastewater treatment (patent search)</a> · CN122403545A · Invention patent.</span>
+          </li>
+          <li>
+            <span class="date">2026.06</span>
+            <span class="news-text"><a href="https://eureka.patsnap.com/patent/CN122209131A">Intelligent integrated ultrapure water treatment equipment for green hydrogen plants</a> · CN122209131A · Invention patent.</span>
+          </li>
+          <li>
+            <span class="date">2026.02</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">SLAM trajectory and point-cloud map evaluation platform combining visualization and quantitative analysis (registration query)</a> · 2026SR0308007 · Software copyright.</span>
+          </li>
+          <li>
+            <span class="date">2025.10</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">Automatic fiber diameter measurement and analysis platform based on image processing (registration query)</a> · 2025SR1996032 · Software copyright.</span>
+          </li>
+          <li>
+            <span class="date">2026.01</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">Automatic fiber diameter-to-wall-thickness ratio measurement and analysis platform (registration query)</a> · 2026SR0050359 · Software copyright.</span>
+          </li>
+          <li>
+            <span class="date">2026.02</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">Automatic metal surface defect detection and analysis platform for MVR evaporators (registration query)</a> · 2026SR0314100 · Software copyright.</span>
+          </li>
+        </ul>
+      </section>
+      <section id="awards">
+        <h2>Student Awards</h2>
+        <ul id="awards-list" class="dated-list">
+          <li>
+            <span class="date">National First Prize</span>
+            <span class="news-text">17th National University Students Intelligent Car Competition · Outdoor Autonomous Driving Category.</span>
+          </li>
+          <li>
+            <span class="date">National Third Prize</span>
+            <span class="news-text">17th National University Students Intelligent Car Competition · Outdoor Remote Driving Category.</span>
+          </li>
+          <li>
+            <span class="date">Hubei Third Prize</span>
+            <span class="news-text">18th National University Students Intelligent Car Competition · Outdoor Remote Driving Category.</span>
+          </li>
+          <li>
+            <span class="date">Hubei Third Prize</span>
+            <span class="news-text">Lanqiao Cup National Software and Information Technology Professionals Competition.</span>
+          </li>
+          <li>
+            <span class="date">Hubei Third Prize</span>
+            <span class="news-text">6th National University Computer Competency Challenge.</span>
+          </li>
+          <li>
+            <span class="date">Hubei Third Prize</span>
+            <span class="news-text">7th National University Computer Competency Challenge.</span>
+          </li>
+          <li>
+            <span class="date">2025</span>
+            <span class="news-text">Supervised a graduate student who received a university innovation fund grant.</span>
+          </li>
+        </ul>
+      </section>
+      <section id="hobbies">
+        <h2>Hobbies</h2>
+        <div id="hobbies-list">
+          <p>Playing basketball.</p>
+        </div>
+      </section>
+      <footer><span id="footer-name">Jun Cheng</span><span>· Academic Homepage</span><a href="#top">Back to top ↑</a></footer>
+    </div>
+  </main>
+  <script src="../static/js/main.js?v=20261023-theme-panel"></script>
+</body>
+</html>

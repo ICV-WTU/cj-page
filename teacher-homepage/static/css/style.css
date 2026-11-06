@@ -1,0 +1,194 @@
+/* 主题配色：定义默认、彩色、深色和自定义主题的颜色变量，中英文页面共用。 */
+:root{color-scheme:light;--background:#fff;--ink:#3f454f;--heading:#24232b;--blue:#205fa5;--muted:#626570;--nav:#f7f8fa;--line:#e0e4e9;--photo:var(--nav)}
+html[data-theme="blue"]{--background:#e6effa;--ink:#284e77;--heading:#193b61;--muted:#526780;--blue:#205fa5;--nav:#f3f7fe;--line:#c5d5e9}
+html[data-theme="teal"]{--background:#def2ef;--ink:#205b56;--heading:#173f3c;--muted:#486c66;--blue:#086d73;--nav:#f0faf8;--line:#badbd5}
+html[data-theme="green"]{--background:#e7f0df;--ink:#345c31;--heading:#244124;--muted:#546b4a;--blue:#276c3e;--nav:#f3f8ed;--line:#c7d8bb}
+html[data-theme="purple"]{--background:#eee5f7;--ink:#634078;--heading:#422b52;--muted:#735b80;--blue:#812597;--nav:#f8f2fd;--line:#d6c4e7}
+html[data-theme="orange"]{--background:#faecd9;--ink:#7f451e;--heading:#573016;--muted:#805d40;--blue:#a74908;--nav:#fff7ec;--line:#e8ceb0}
+html[data-theme="dark"]{color-scheme:dark;--background:#1d1c22;--ink:#d1d9df;--heading:#f4f0f7;--blue:#86baff;--muted:#b4bbc5;--nav:#25232c;--line:#3b3744}
+html[data-theme="custom"]{color-scheme:var(--custom-scheme,light);--background:var(--custom-background,#e6effa);--ink:var(--custom-ink,#3f454f);--heading:var(--ink);--blue:var(--custom-link,#205fa5);--muted:var(--custom-muted,#626570);--nav:var(--custom-nav,#f3f7fe);--line:var(--custom-line,#c5d5e9);--on-accent:var(--custom-on-accent,#fff)}
+@media(prefers-color-scheme:dark){html:not([data-theme]){color-scheme:dark;--background:#1d1c22;--ink:#d1d9df;--heading:#f4f0f7;--blue:#86baff;--muted:#b4bbc5;--nav:#25232c;--line:#3b3744}}
+
+/* 全局基础：统一字体、链接、标题和间距，并设置键盘焦点及辅助阅读样式。 */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--background);color:var(--ink);font:17px/1.75 Arial,"Helvetica Neue",Helvetica,"Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none;text-underline-offset:4px}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+[hidden]{display:none!important}
+p{margin:0 0 18px}
+h1,h2,h3{color:var(--heading)}
+h1,h2{margin:0 0 20px;font-weight:500;line-height:1.3;letter-spacing:-.025em}
+h2{font-size:28px}
+.muted,.placeholder{color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;top:-100px;z-index:30;background:var(--background);padding:10px 16px;border:1px solid var(--blue)}
+.skip-link:focus{top:8px;left:8px}
+
+/* 顶部导航：设置固定在顶部的导航栏、语言切换入口及按钮排列。 */
+.topbar{position:sticky;z-index:10;top:0;display:flex;align-items:center;gap:20px;min-height:49px;padding:8px 10px;background:var(--background)}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;min-width:0;margin:0}
+nav a{color:var(--blue);font-size:14px;font-weight:600;white-space:nowrap}
+nav a:hover{color:var(--blue)}
+.header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+#language-toggle{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:3px 8px;border:1px solid transparent;border-radius:5px;background:var(--background);color:var(--blue);font-size:12px;font-weight:600;white-space:nowrap}
+#language-toggle:hover{border-color:var(--blue);text-decoration:none}
+
+/* 主题面板：设置主题按钮、弹出面板、配色卡片、自定义颜色控件和操作按钮。 */
+.theme-picker{position:relative}
+.theme-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:32px;padding:3px 8px;border:1px solid transparent;border-radius:5px;background:var(--background);color:var(--ink);font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}
+.theme-button:hover,.theme-button[aria-expanded="true"]{border-color:var(--blue);color:var(--blue)}
+.theme-panel{position:absolute;z-index:12;right:0;top:calc(100% + 12px);width:340px;max-width:calc(100vw - 36px);max-height:70vh;overflow:auto;padding:18px;border:1px solid var(--line);border-radius:9px;box-shadow:0 10px 32px #0002;background:var(--background);color:var(--ink);font-size:13px}
+.theme-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.theme-panel-heading h2{margin:0;color:var(--heading);font-size:16px;font-weight:600}
+.theme-close{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:0;border-radius:4px;background:var(--nav);color:var(--ink);font:inherit;font-size:22px;cursor:pointer}
+.theme-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;min-width:0;margin:0;padding:0;border:0}
+.theme-option{position:relative;min-width:0;cursor:pointer}
+.theme-choice{display:flex;flex-direction:column;gap:6px;padding:7px;border:1px solid var(--line);border-radius:5px;background:var(--background);color:var(--ink);font-size:12px;text-align:center}
+.theme-option:hover .theme-choice{border-color:var(--blue)}
+.theme-option input:checked+.theme-choice{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue);color:var(--blue)}
+.theme-option input:focus-visible+.theme-choice{outline:2px solid var(--blue);outline-offset:3px}
+.theme-swatch{display:block;width:100%;height:26px;border-radius:3px;border:1px solid #0002;border-left:4px solid #205fa5;background:#fff}
+.theme-swatch[data-swatch="system"]{background:linear-gradient(110deg,#fff 50%,#1d1c22 50%)}
+.theme-swatch[data-swatch="dark"]{background:#1d1c22;border-left-color:#86baff}
+.theme-swatch[data-swatch="blue"]{background:#e6effa}
+.theme-swatch[data-swatch="teal"]{background:#def2ef;border-left-color:#086d73}
+.theme-swatch[data-swatch="green"]{background:#e7f0df;border-left-color:#276c3e}
+.theme-swatch[data-swatch="purple"]{background:#eee5f7;border-left-color:#812597}
+.theme-swatch[data-swatch="orange"]{background:#faecd9;border-left-color:#a74908}
+.theme-swatch[data-swatch="custom"]{background:var(--custom-background,#e6effa);border-left-color:var(--custom-link,#205fa5)}
+.theme-custom-controls{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.theme-custom-controls p{margin:0 0 8px;color:var(--muted);font-size:12px;line-height:1.6}
+.custom-color-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.custom-color-value{display:flex;align-items:center;gap:8px}
+.custom-color-row input[type="color"]{width:38px;height:30px;padding:2px;border:1px solid var(--line);border-radius:4px;background:var(--background);cursor:pointer}
+.custom-color-row output{font:11px/1.5 ui-monospace,Consolas,monospace;min-width:60px}
+.theme-panel-footer{display:flex;justify-content:flex-end;gap:12px;margin-top:16px}
+.theme-panel-footer button{padding:6px 12px;border:1px solid var(--line);border-radius:4px;background:var(--nav);color:var(--ink);font:inherit;font-size:12px;cursor:pointer}
+#theme-reset{margin-right:auto}
+#theme-done{border-color:var(--blue);color:var(--blue)}
+
+/* 个人介绍：设置页面布局、照片、个人资料、简介和研究方向卡片。 */
+.layout{--profile-width:224px;--intro-gap:48px;--biography-width:612px;max-width:1080px;margin:38px auto 0;padding:0 28px}
+.intro{display:grid;grid-template-columns:var(--profile-width) minmax(0,1fr);gap:var(--intro-gap);align-items:start;padding-bottom:18px}
+.profile{min-width:0}
+.portrait{width:144px;height:173px;margin-bottom:12px;overflow:hidden;background:var(--photo);border-radius:5px;border:1px solid var(--line)}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.profile h1{font-size:30px;margin:0 0 2px;letter-spacing:-.04em}
+.english-name{font-size:17px;margin:0 0 8px;color:var(--muted);font-weight:300}
+html[lang="en"] .english-name{display:none}
+#profile-title{font-size:13px;margin:8px 0 12px}
+.affiliation{margin-bottom:10px}
+.affiliation p{font-size:12px;line-height:1.65;margin:0 0 3px}
+.affiliation strong{font-size:14px;font-weight:500}
+.location{font-size:12px;color:var(--muted);margin:10px 0}
+.social-links{display:flex;align-items:center;gap:12px}
+.icon-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:5px;background:#2585c4;color:#fff;border:1px solid #2585c4}
+.icon-link svg{width:26px;height:26px}
+.icon-link:hover{background:#176ca5;color:#fff;border-color:#176ca5;text-decoration:none}
+button.icon-link{padding:0;font:inherit}
+button.icon-link:disabled{opacity:1;cursor:default}
+#about{min-width:0}
+#about h2{font-size:30px;margin:0 0 22px}
+#about p{font-size:15px;line-height:1.85;margin-bottom:18px}
+#biography{max-width:var(--biography-width);font-size:17px}
+#about #biography p{font-size:inherit;line-height:1.8;margin-bottom:24px}
+#biography a{font-weight:600}
+.subheading{font-size:15px;font-weight:600;margin:24px 0 12px}
+.interests{display:flex;flex-wrap:wrap;gap:7px}
+.interests span{padding:3px 9px;font-size:12px;border:1px solid var(--line);border-radius:4px;color:var(--ink);background:var(--nav)}
+.research-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0 18px}
+.research-card{padding:0 0 0 12px;border-left:2px solid var(--line);min-width:0}
+.research-label{display:block;margin-bottom:7px;color:var(--blue);font-size:10px;font-weight:600;letter-spacing:.08em}
+.research-card h3{font-size:14px;font-weight:600;line-height:1.6;margin:0 0 8px}
+#about .research-card p{font-size:12px;line-height:1.8;margin:0}
+#about .source-note,.source-note{font-size:11px;color:var(--muted);line-height:1.7}
+
+/* 内容列表：统一各板块间距、日期列表和最新动态滚动区域的样式。 */
+.content section{margin-top:14px;padding-top:18px}
+.content section:first-child{margin-top:0}
+.content section h2{margin-bottom:22px}
+.dated-list{list-style:none;margin:0;padding:0}
+.dated-list li{display:grid;grid-template-columns:90px minmax(0,1fr);gap:20px;margin-bottom:12px;font-size:17px;line-height:1.8}
+.date{font-size:14px;font-weight:600;color:var(--muted);padding-top:2px}
+.news-text{overflow-wrap:anywhere}
+.news-scroll{height:240px;overflow-y:scroll;overflow-x:hidden;overscroll-behavior-y:contain;padding-right:12px;scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:#888 #f1f1f1}
+.news-scroll:focus-visible{outline:2px solid var(--blue);outline-offset:5px}
+#news-scroll{max-width:calc(var(--profile-width) + var(--intro-gap) + var(--biography-width))}
+.news-scroll::-webkit-scrollbar{width:8px}
+.news-scroll::-webkit-scrollbar-track{background:#f1f1f1}
+.news-scroll::-webkit-scrollbar-thumb{background:#888;border-radius:8px}
+.news-scroll::-webkit-scrollbar-thumb:hover{background:#666}
+.news-scroll::-webkit-scrollbar-button{display:none;width:0;height:0}
+#news-list li:has(.date:empty){grid-template-columns:minmax(0,1fr)}
+#news-list .date:empty{display:none}
+#news-list .date{white-space:nowrap;font-variant-numeric:tabular-nums}
+#projects li{grid-template-columns:100px minmax(0,1fr)}
+#awards li{grid-template-columns:112px minmax(0,1fr)}
+html[lang="en"] #awards li{grid-template-columns:135px minmax(0,1fr)}
+
+/* 论文展示：设置预览图片或视频、标题、作者、期刊信息和论文链接。 */
+.publication{display:grid;grid-template-columns:140px minmax(0,1fr);gap:22px;align-items:start;margin-bottom:12px}
+.publication:last-child{margin-bottom:0}
+.publication-media{width:140px;max-width:100%;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:var(--photo)}
+.publication-media>video,.publication-media>img{display:block;width:100%;height:100%;object-fit:contain}
+.publication-media-gif{aspect-ratio:auto;background:transparent}
+.publication-media-gif>img{height:auto}
+.publication-body{min-width:0}
+.publication h3{font-size:18px;font-weight:600;line-height:1.6;margin:0 0 8px}
+.publication h3 a{color:var(--blue)}
+.publication h3 a:hover{color:var(--blue);text-decoration:underline}
+.authors,.venue{font-size:15px;line-height:1.7;margin:0 0 5px}
+.authors strong{color:var(--heading);font-weight:600}
+.venue{font-style:italic;color:var(--muted)}
+.publication-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px;font-size:11px;font-weight:600}
+.publication-links a{padding:1px 10px;border:1px solid var(--blue);border-radius:3px;color:var(--blue)}
+.publication-links a:hover{background:var(--nav);color:var(--blue);text-decoration:none}
+.publication-video-placeholder{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px dashed var(--line);color:var(--muted);font-size:12px}
+.publication-video-icon{font-size:22px;color:var(--blue)}
+
+/* 页面收尾：设置兴趣爱好文字及页脚的字号、间距和链接排列。 */
+#hobbies p{font-size:17px}
+footer{display:flex;flex-wrap:wrap;gap:5px;margin-top:40px;padding:22px 0 28px;font-size:11px;color:var(--muted)}
+footer a{margin-left:auto}
+
+/* 屏幕适配：逐步调整平板和手机布局，并在用户偏好减少动画时关闭平滑滚动。 */
+@media(max-width:1000px){.topbar{gap:16px}nav{gap:8px 16px}.layout{--profile-width:200px;--intro-gap:32px}}
+@media(max-width:860px){
+  nav{flex:1;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding:4px 0;scrollbar-width:thin}
+  .research-cards{grid-template-columns:1fr;gap:15px}
+  .research-card{padding-left:12px}
+  .layout{margin-top:28px;padding:0 24px}
+}
+@media(max-width:600px){
+  .topbar{padding:6px 8px;gap:12px}
+  .header-actions{gap:8px}
+  .theme-button{font-size:11px;padding:3px 8px}
+  #language-toggle{padding:3px 8px;font-size:11px}
+  nav{gap:16px}nav a{font-size:13px}
+  .layout{padding:0 20px;margin-top:25px}
+  .intro{display:block;padding-bottom:16px}
+  .profile{display:flow-root;margin-bottom:28px}
+  .portrait{float:left;width:108px;height:130px;margin:0 18px 12px 0}
+  .profile h1{font-size:30px;padding-top:2px}
+  .english-name{font-size:16px}
+  #profile-title{margin:8px 0 12px}
+  .affiliations{display:flow-root}
+  .profile .location{clear:both;margin-top:12px}
+  #about h2,h2{font-size:25px}
+  #about p{font-size:14px}
+  #biography{font-size:15px;max-width:100%}
+  #news-scroll{max-width:100%}
+  #about #biography p{margin-bottom:20px}
+  .research-cards{gap:18px}
+  .content section{margin-top:12px;padding-top:16px}
+  .dated-list li{grid-template-columns:72px minmax(0,1fr);gap:12px;font-size:15px}
+  #projects li{grid-template-columns:82px minmax(0,1fr)}
+  #awards li,html[lang="en"] #awards li{grid-template-columns:90px minmax(0,1fr)}
+  .date{font-size:11px}
+  .publication{grid-template-columns:1fr;gap:12px;align-items:start}
+  .publication h3{font-size:16px}
+  .authors,.venue{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

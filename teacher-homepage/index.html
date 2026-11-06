@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>程君 | 个人学术主页</title>
+  <script src="static/js/theme-init.js?v=20261023-theme-panel"></script>
+  <link rel="stylesheet" href="static/css/style.css?v=20261026-body-colors">
+  <link rel="alternate" hreflang="zh-CN" href="index.html">
+  <link rel="alternate" hreflang="en" href="en/index.html">
+</head>
+<body>
+  <a class="skip-link" href="#about">跳转到正文</a>
+  <header class="topbar">
+    <nav aria-label="主导航">
+      <a href="#news">最新动态</a><a href="#publications">代表论文</a><a href="#projects">科研项目</a><a href="#patents">专利与软著</a><a href="#awards">学生指导与获奖</a><a href="#hobbies">兴趣爱好</a>
+    </nav>
+    <div class="header-actions">
+    <a id="language-toggle" href="en/index.html" lang="en" hreflang="en" aria-label="Switch to English" title="Switch to English">English</a>
+    <div id="theme-picker" class="theme-picker">
+      <button id="theme-button" class="theme-button" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-panel" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.5-3.3 1.8 1.8 0 0 1 1.3-3h1.7A3.5 3.5 0 0 0 21 11.2 9 9 0 0 0 12 3Z"/><circle cx="7.5" cy="10" r=".7"/><circle cx="11" cy="6.8" r=".7"/><circle cx="15.5" cy="8" r=".7"/></svg>
+        <span>主题</span>
+      </button>
+      <div id="theme-panel" class="theme-panel" role="dialog" aria-labelledby="theme-panel-heading" hidden><!-- 对应面板 -->
+        <div class="theme-panel-heading"><!-- 装“选择主题”标题和右上角“×”关闭按钮的区域 -->
+          <h2 id="theme-panel-heading">选择主题</h2>
+          <button id="theme-close" type="button" class="theme-close" aria-label="关闭主题面板">×</button>
+        </div>
+        <fieldset class="theme-options"><!-- 装“跟随系统、浅色、深色、蓝色”等主题选项的区域 -->
+          <legend class="sr-only">页面主题</legend>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="system" data-theme-option checked><!-- 对应跟随系统选择，系统什么颜色，网页就什么颜色 -->
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="system" aria-hidden="true"></span><span>跟随系统</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="light" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="light" aria-hidden="true"></span><span>浅色</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="dark" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="dark" aria-hidden="true"></span><span>深色</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="blue" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="blue" aria-hidden="true"></span><span>蓝色</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="teal" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="teal" aria-hidden="true"></span><span>青色</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="green" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="green" aria-hidden="true"></span><span>绿色</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="purple" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="purple" aria-hidden="true"></span><span>紫色</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="orange" data-theme-option>
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="orange" aria-hidden="true"></span><span>橙色</span></span>
+          </label>
+          <label class="theme-option">
+            <input class="sr-only" type="radio" name="page-theme" value="custom" data-theme-option><!-- 这是自定义那个小卡片 -->
+            <span class="theme-choice"><span class="theme-swatch" data-swatch="custom" aria-hidden="true"></span><span>自定义</span></span>
+          </label>
+        </fieldset>
+        <div id="theme-custom-controls" class="theme-custom-controls" hidden><!-- 创建**“自定义主题”的设置区域**，用来装颜色选择等控件。 -->
+          <label class="custom-color-row" for="theme-color-background">
+            <span>页面背景</span>
+            <span class="custom-color-value"><input id="theme-color-background" type="color" data-custom-color="background" value="#e6effa"><output id="theme-color-background-value" for="theme-color-background">#E6EFFA</output></span>
+          </label>
+          <label class="custom-color-row" for="theme-color-text">
+            <span>文字颜色</span>
+            <span class="custom-color-value"><input id="theme-color-text" type="color" data-custom-color="text" value="#3f454f"><output id="theme-color-text-value" for="theme-color-text">#3F454F</output></span>
+          </label>
+          <label class="custom-color-row" for="theme-color-link">
+            <span>链接颜色</span>
+            <span class="custom-color-value"><input id="theme-color-link" type="color" data-custom-color="link" value="#205fa5"><output id="theme-color-link-value" for="theme-color-link">#205FA5</output></span>
+          </label>
+        </div>
+        <div class="theme-panel-footer">
+          <button id="theme-reset" type="button" hidden>恢复默认颜色</button>
+          <button id="theme-done" type="button">完成</button>
+        </div>
+      </div>
+    </div>
+    <span id="theme-status" class="sr-only" aria-live="polite"></span>
+    </div>
+  </header>
+  <main id="top" class="layout">
+    <div class="intro">
+    <!-- 个人资料：直接修改下方姓名、职称、照片、单位和链接。 -->
+    <aside class="profile" aria-label="个人信息">
+      <div id="portrait" class="portrait"><img src="static/images/cheng-jun.png" alt="程君"></div>
+      <h1 id="profile-name">程君</h1>
+      <p id="profile-english-name" class="english-name">Jun Cheng</p>
+      <p id="profile-title" class="muted">讲师 · 硕士生导师</p>
+      <p class="location">中国 · 武汉</p>
+      <div class="social-links">
+        <a id="profile-email" class="icon-link" href="mailto:jcheng@wtu.edu.cn" aria-label="给程君发送邮件" title="jcheng@wtu.edu.cn"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg></a>
+        <a id="profile-github" class="icon-link" href="https://github.com/ICV-WTU" target="_blank" rel="noopener noreferrer" aria-label="访问 ICV-WTU 的 GitHub 主页" title="GitHub · ICV-WTU">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8A11.2 11.2 0 0 0 8.46 22.6c.56.1.77-.24.77-.54v-2.09c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.62 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.63 5.25-5.14 5.53.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+        </a>
+      </div>
+    </aside>
+      <section id="about">
+        <h2>关于我</h2>
+        <div id="biography">
+          <p>现任<a href="https://www.wtu.edu.cn/">武汉纺织大学</a><a href="https://csai.wtu.edu.cn/">计算机与人工智能学院</a>讲师、硕士生导师，同时在<a href="https://www.whut.edu.cn/">武汉理工大学</a><a href="https://its.whut.edu.cn/">智能交通研究中心</a>从事博士后研究。2022年10月获武汉理工大学交通信息工程及控制专业博士学位，同年11月加入武汉纺织大学。研究围绕自动驾驶与机器人感知定位展开，涉及多传感器融合、视觉 SLAM 及机器学习。主持<a href="https://www.nsfc.gov.cn/">国家自然科学基金</a>青年项目等科研任务，并承担学术期刊审稿与学生竞赛指导工作。</p>
+        </div>
+        <h3 class="subheading">研究兴趣</h3>
+        <p id="interests">无人驾驶；机器人协同感知；视觉SLAM；深度/机器学习</p>
+      </section>
+    </div>
+    <div class="content">
+      <section id="news">
+        <h2 id="news-heading">最新动态</h2>
+        <div id="news-scroll" class="news-scroll" role="region" aria-labelledby="news-heading" tabindex="0">
+          <ul id="news-list" class="dated-list">
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">🔥 论文 SDCBNet 已在《Neural Networks》发表，恭喜余鎏鑫同学！</span>
+            </li>
+            <!-- 以下为查看滚动效果的示例动态，可直接删除或替换。 -->
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 01】组会预告：本周交流视觉 SLAM 的研究进展与论文阅读心得。</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 02】研究分享：多传感器融合定位方法的实验流程与结果分析。</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 03】学习交流：机器人协同感知相关论文讨论，欢迎分享阅读笔记。</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 04】项目记录：整理自动驾驶场景中的数据采集与可视化流程。</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 05】竞赛交流：分享智能车调试经验与常见问题的排查方法。</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 06】主页更新：补充研究介绍、论文入口与近期动态。</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 07】阅读推荐：围绕视觉惯性定位与地图构建开展专题学习。</span>
+            </li>
+            <li>
+              <span class="date"><time datetime="2026-10-26" title="消息更新日期">2026.10.26</time></span>
+              <span class="news-text">【示例 08】交流安排：讨论下一阶段的实验计划与阶段总结。</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="publications">
+        <h2>代表论文</h2>
+        <div id="publication-list">
+        <!-- 论文 1：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication">
+          <div class="publication-media publication-media-gif"><!-- 创建一个放论文图片或 GIF 动图的区域 -->
+            <img src="static/images/paper-1-preview.gif" width="320" height="320" alt="第一篇论文的演示动图">
+          </div>
+          <div class="publication-body">
+            <h3><a href="https://trid.trb.org/View/2425132" target="_blank" rel="noopener noreferrer" title="查看摘要、作者与期刊信息，非论文全文">High Precision and Robust Vehicle Localization Algorithm with Visual-LiDAR-IMU Fusion</a></h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Fu Zhumu, Du Luyao</p>
+            <p class="venue">IEEE Transactions on Vehicular Technology, 2024, 73(8): 11029–11043.</p>
+            <div class="publication-links"><!-- 创建一个放论文相关链接的区域 -->
+              <a href="https://trid.trb.org/View/2425132" target="_blank" rel="noopener noreferrer" title="查看摘要、作者与期刊信息，非论文全文">论文</a>
+            </div>
+          </div>
+        </article>
+        <!-- 论文 2：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication">
+          <div class="publication-media publication-media-gif">
+            <img src="static/images/paper-2-preview.gif" width="320" height="320" alt="第二篇论文的演示动图">
+          </div>
+          <div class="publication-body">
+            <h3><a href="https://doi.org/10.1016/j.measurement.2023.113432" target="_blank" rel="noopener noreferrer">Map aided visual-inertial fusion localization method for autonomous driving vehicles</a></h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Hu Xinrong, Cai Jingcao</p>
+            <p class="venue">Measurement, 2023, 221: 113432.</p>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1016/j.measurement.2023.113432">论文</a>
+            </div>
+          </div>
+        </article>
+        <!-- 论文 3：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication"><!-- 创建一篇论文的完整展示区域 -->
+          <!-- article：一篇论文的整个展示区域 -->
+          <!-- publication-media：图片区域 -->
+          <!-- publication-body：文字区域 -->
+          <div class="publication-media publication-media-gif">
+            <img src="static/images/paper-3-preview.gif" width="320" height="320" alt="第三篇论文的演示动图">
+          </div>
+          <div class="publication-body">
+            <h3><a href="https://doi.org/10.1016/j.engappai.2022.104992" target="_blank" rel="noopener noreferrer">A Review of Visual SLAM Methods for Autonomous Driving Vehicles</a></h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Hu Xinrong</p>
+            <p class="venue">Engineering Applications of Artificial Intelligence, 2022, 114: 104992.</p>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1016/j.engappai.2022.104992">论文</a>
+            </div>
+          </div>
+        </article>
+        <!-- 论文 4：左侧 GIF 动图的路径在 img 的 src 中修改。 -->
+        <article class="publication">
+          <div class="publication-media publication-media-gif">
+            <img src="static/images/paper-4-preview.gif" width="320" height="320" alt="第四篇论文的演示动图">
+          </div>
+          <div class="publication-body">
+            <h3><a href="https://doi.org/10.1016/j.egyr.2021.09.086" target="_blank" rel="noopener noreferrer">Position Detection for Electric Vehicle DWCS Using VI-SLAM Method</a></h3>
+            <p class="authors"><strong>Cheng Jun</strong>, Zhang Liyan, Chen Qihong, Long Rong</p>
+            <p class="venue">Energy Reports, 2021, 7(6): 1–9.</p>
+            <div class="publication-links">
+              <a href="https://doi.org/10.1016/j.egyr.2021.09.086">论文</a>
+            </div>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section id="projects"><!-- 创建整个“科研项目”板块 -->
+        <h2>科研项目</h2>
+        <ul id="projects-list" class="dated-list"><!-- 创建一个科研项目列表 -->
+          <li>
+            <span class="date">2027–2029</span>
+            <span class="news-text"><a href="https://www.nsfc.gov.cn/">国家自然科学基金</a>青年（C类），52602746；主持；执行期2027.01–2029.12（尚未开始）。</span>
+          </li>
+          <li>
+            <span class="date">2026–2027</span>
+            <span class="news-text"><a href="https://kjt.hubei.gov.cn/">湖北省自然科学基金</a>青年（B类），2026AFB241；主持。</span>
+          </li>
+          <li>
+            <span class="date">2024–2025</span>
+            <span class="news-text"><a href="https://www.chinapostdoctor.org.cn/">中国博士后科学基金</a>面上项目，2023M740018；主持。</span>
+          </li>
+          <li>
+            <span class="date">2023–2025</span>
+            <span class="news-text"><a href="https://jyt.hubei.gov.cn/">湖北省教育厅</a>优秀中青年人才项目，Q20231712；主持；执行期2023.06–2025.06。</span>
+          </li>
+          <li>
+            <span class="date">2026–2027</span>
+            <span class="news-text">咸宁市科技局科技项目，2025GXYF118；企业合作。</span>
+          </li>
+          <li>
+            <span class="date">2024–2025</span>
+            <span class="news-text"><a href="https://zdsss.ygu.edu.cn/">福建省空间信息感知与智能处理重点实验室</a>开放基金，FKLSIPIP1028；主持。</span>
+          </li>
+          <li>
+            <span class="date">2023–2024</span>
+            <span class="news-text"><a href="https://cee.ahpu.edu.cn/2023/0316/c8308a189057/page.htm">安徽省检测技术与节能装置重点实验室开放基金</a>，JCKJ2022B04；主持。</span>
+          </li>
+          <li>
+            <span class="date">2024–2026</span>
+            <span class="news-text"><a href="https://www.wtu.edu.cn/">武汉纺织大学</a>校基金；主持；执行期2024.09–2026.09。</span>
+          </li>
+          <li>
+            <span class="date">2026</span>
+            <span class="news-text"><a href="https://www.wtu.edu.cn/">武汉纺织大学</a>专创融合课程建设项目；主持。</span>
+          </li>
+        </ul>
+      </section>
+      <section id="patents">
+        <h2>专利与软件著作权</h2>
+        <ul id="patents-list" class="dated-list">
+          <li>
+            <span class="date">2025.03</span>
+            <span class="news-text"><a href="https://patents.google.com/patent/CN120121043A/en">一种以IMU为中心的多传感器融合自动驾驶定位方法</a>· CN120121043A · 发明。</span>
+          </li>
+          <li>
+            <span class="date">2025.03</span>
+            <span class="news-text"><a href="https://patents.google.com/patent/CN120147425A/en">基于线和平面特征关联的相机-LiDAR外参标定方法及装置</a>· CN120147425A · 发明。</span>
+          </li>
+          <li>
+            <span class="date">2025.11</span>
+            <span class="news-text"><a href="https://eureka.patsnap.com/patent/CN120943423A">一种水环境治理用污水生态净化系统</a> · CN120943423A · 发明。</span>
+          </li>
+          <li>
+            <span class="date">2026.04</span>
+            <span class="news-text"><a href="https://eureka.patsnap.com/patent/CN121778901A">一种多序联动水环境治理的污水回用装置</a> · CN121778901A · 发明。</span>
+          </li>
+          <li>
+            <span class="date">2026.07</span>
+            <span class="news-text"><a href="https://patents.google.com/?q=CN122403545A">一种工业高盐废水处理用MVR节能蒸发废水处理设备（编号检索）</a> · CN122403545A · 发明。</span>
+          </li>
+          <li>
+            <span class="date">2026.06</span>
+            <span class="news-text"><a href="https://eureka.patsnap.com/patent/CN122209131A">一种绿氢工厂用智能一体化超纯水处理设备</a> · CN122209131A · 发明。</span>
+          </li>
+          <li>
+            <span class="date">2026.02</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">基于可视化与定量结合的SLAM轨迹与点云地图评价平台（登记查询）</a> · 2026SR0308007 · 软件著作权。</span>
+          </li>
+          <li>
+            <span class="date">2025.10</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">基于图像处理技术的纤维直径自动测量与分析平台（登记查询）</a> · 2025SR1996032 · 软件著作权。</span>
+          </li>
+          <li>
+            <span class="date">2026.01</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">纤维直径壁厚比自动测量与分析平台（登记查询）</a> · 2026SR0050359 · 软件著作权。</span>
+          </li>
+          <li>
+            <span class="date">2026.02</span>
+            <span class="news-text"><a href="https://register.ccopyright.com.cn/query.html">MVR蒸发器金属表面缺陷自动检测与分析平台（登记查询）</a> · 2026SR0314100 · 软件著作权。</span>
+          </li>
+        </ul>
+      </section>
+      <section id="awards">
+        <h2>学生指导与获奖</h2>
+        <ul id="awards-list" class="dated-list">
+          <li>
+            <span class="date">全国一等奖</span>
+            <span class="news-text">第十七届全国大学生智能车竞赛 · 室外无人驾驶组。</span>
+          </li>
+          <li>
+            <span class="date">全国三等奖</span>
+            <span class="news-text">第十七届全国大学生智能车竞赛 · 室外远程驾驶组。</span>
+          </li>
+          <li>
+            <span class="date">湖北三等奖</span>
+            <span class="news-text">第十八届全国大学生智能车竞赛 · 室外远程驾驶组。</span>
+          </li>
+          <li>
+            <span class="date">湖北三等奖</span>
+            <span class="news-text">蓝桥杯全国软件和信息技术专业人才大赛。</span>
+          </li>
+          <li>
+            <span class="date">湖北三等奖</span>
+            <span class="news-text">第六届全国高校计算机能力挑战赛。</span>
+          </li>
+          <li>
+            <span class="date">湖北三等奖</span>
+            <span class="news-text">第七届全国高校计算机能力挑战赛。</span>
+          </li>
+          <li>
+            <span class="date">2025</span>
+            <span class="news-text">指导研究生获批校级创新基金项目。</span>
+          </li>
+        </ul>
+      </section>
+      <section id="hobbies">
+        <h2>兴趣爱好</h2>
+        <div id="hobbies-list">
+          <p>打篮球。</p>
+        </div>
+      </section>
+      <footer><span id="footer-name">程君</span><span>· 个人学术主页</span><a href="#top">返回顶部 ↑</a></footer>
+    </div>
+  </main>
+  <script src="static/js/main.js?v=20261023-theme-panel"></script>
+</body>
+</html>
